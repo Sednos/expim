@@ -9,3 +9,15 @@
 .data, .import {
 	width: 40%;
 }
+
+#show_data {
+	border: 1px solid #999999;
+	border-radius: 10px;
+	min-height: 50px;
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+#export {
+	float: right;
+}
