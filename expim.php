@@ -41,13 +41,13 @@ function settings_page() {
  		echo '<h1 id="h1_expim">'.get_admin_page_title().'</h1>';
 
  		echo '<div class="wrap">';
-  		echo '<div class="data">';
+  		echo '<div class="data expim_sednos">';
   		echo '<h2>Select data you want export</h2>';
-  		echo '<label><input type="checkbox" id="users" value="users">users</label><br/>';
+  		echo '<label><input type="checkbox" id="users" value="0" data-value="users">users</label><br/>';
 
   		foreach ( get_post_types( '', 'names' ) as $post_type ) {
 
-   			echo '<label><input type="checkbox" id="' . $post_type . '" value="' . $post_type . '">' . $post_type . '</label><br/>';
+   			echo '<input type="checkbox" id="' . $post_type . '" value="0" data-value="' . $post_type . '">' . $post_type . '<br/>';
    			
 		}
 
