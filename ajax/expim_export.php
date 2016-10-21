@@ -11,7 +11,7 @@
 /*$tamere = explode($_GET["post_types"], ",");
 	foreach($tamere as $post){
 		*/
-		
+
 		$post = $_GET["post_types"];
 
 		$fp = fopen("php://output", "w");
@@ -22,7 +22,17 @@
 			$result_users = $wpdb->get_results('SELECT * FROM ' . $db_users);
 
 			fputcsv($fp, array(
-			"id"
+			"id;",
+			"ID;",
+			"user_login;",
+			"user_pass;",
+			"user_nicename;",
+			"user_email;",
+			"user_url;",
+			"user_registered;",
+			"user_activation_key;",
+			"user_status;",
+			"display_name;",
 			));
 
 			foreach($result_users as $field){
@@ -37,7 +47,29 @@
 			$result_posts = $wpdb->get_results( 'SELECT * FROM ' . $db_posts . ' WHERE post_type="' . $post . '"');
 
 			fputcsv($fp, array(
-			"id"
+			"id;",
+			"post_author;",
+			"post_date;",
+			"post_date_gmt;",
+			"post_content;",
+			"post_title;",
+			"post_excerpt;",
+			"post_status;",
+			"comment_status;",
+			"ping_status;",
+			"post_password;",
+			"post_name;",
+			"to_ping;",
+			"pinged;",
+			"post_modified;",
+			"post_modified_gmt;",
+			"post_content_filtered;",
+			"post_parent;",
+			"guid;",
+			"menu_order;",
+			"post_type;",
+			"post_mime_type;",
+			"comment_count \n"
 			));
 
 			foreach($result_posts as $field){
