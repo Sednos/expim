@@ -10,8 +10,9 @@
 	width: 40%;
 }
 
-table {
-	max-width: 100%;
+#show_data {
+	width: 100%;
+	overflow: auto;
 }
 
 tbody tr:nth-of-type(2n) {
