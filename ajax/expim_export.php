@@ -12,7 +12,7 @@
 	foreach($tamere as $post){
 		*/
 
-		$post = $_GET["post_types"];
+		$post = $_GET["post_type"];
 
 		$fp = fopen("php://output", "w");
 		if($post == "users"){
@@ -37,7 +37,16 @@
 
 			foreach($result_users as $field){
 			    fputcsv($fp, array(
-			    	$field->ID
+			    	"$field->ID;",
+					"$field->user_login;",
+					"$field->user_pass;",
+					"$field->user_nicename;",
+					"$field->user_email;",
+					"$field->user_url;",
+					"$field->user_registered;",
+					"$field->user_activation_key;",
+					"$field->user_status;",
+					"$field->display_name"
 			    ));	
 			}  
 			fclose($fp);	
